@@ -96,7 +96,9 @@ function App() {
     return (
       <div className="wheel-container">
         {/* Main Wheel */}
+        
         <div className="placeholder-wheel-outer">
+          
         <div className="placeholder-wheel">
           <div className="placeholder-segments">
             {[...Array(6)].map((_, i) => (
@@ -110,11 +112,7 @@ function App() {
         </div>
         </div>
   
-        {/* First Small Circle */}
-        <div className="small-circle"></div>
-  
-        {/* Second Small Circle */}
-        <div className="small-circle second"></div>
+        
       </div>
     );
   };

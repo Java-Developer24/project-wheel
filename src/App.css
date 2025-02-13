@@ -23,8 +23,10 @@ body {
 
 .wheel-section {
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 1rem;
+  border: 1px solid white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 600px;
   position: relative;
@@ -56,25 +58,28 @@ body {
 }
 
 .lucky-spin-text {
-  color: #E82561;
-  font-size: 1.8rem;
-  font-weight: bold;
+  color: #bb4ff3;
+  font-size: 2.1rem;
+  font-weight: 1000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
   text-align: center;
+  font-family: "Pacifico", cursive; /* Beautiful cursive font */
 }
 
 .wheel-container {
   position: relative;
-  width: 100%;
+  width: 98%;
   aspect-ratio: 1;
   margin: 0 auto;
 }
 
 .wheel-outer {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 98%;
+  height: 98%;
   border-radius: 50%;
-  background: #118B50;
+  background: white ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +91,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 26px solid #FFB200;
+  border: 26px solid white;
   animation: spin 10s linear infinite;
 }
 
@@ -104,7 +109,7 @@ body {
   width: 95%;
   height: 95%;
   border-radius: 50%;
-  border: 15px solid #EB5B00;
+  border: 15px solid black;
   animation: spin 8s linear infinite reverse;
 }
 
@@ -136,12 +141,12 @@ body {
   align-items: center;
   justify-content: center;
  
-  border: 15px solid #F8DE22;
+  border: 28px solid #FFD700 ;
 }
 .placeholder-wheel {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 105%;
+  height: 105%;
   border-radius: 50%;
   background: conic-gradient(
     #FFF4B2 0deg 60deg,   /* Light Gold */
@@ -155,38 +160,14 @@ body {
   align-items: center;
   justify-content: center;
   animation: spin 3s linear infinite ;
-  border: 23px solid #0A5EB0;
+  border: 25px solid #0A5EB0;
 }
 
 
 
 
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-    40% { transform: rotate(180deg); }
-    50% { transform: rotate(180deg); }
-    60% { transform: rotate(180deg); }
-    100% { transform: rotate(1080deg); }
-}
 
-.placeholder-segments {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  
-}
-
-.segment {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 50%;
-  transform-origin: 0% 100%;
-  /* animation:glow 4s linear infinite; */
-  border-left: 2px solid black;
-}/* 🔥 Glow Effect: Placed above the wheel to highlight only gold areas */
 .placeholder-wheel::before {
   content: "";
   position: absolute;
@@ -221,16 +202,61 @@ body {
 .placeholder-wheel.spinning {
   animation: spin 3s linear infinite, glow 2s ease-in-out infinite alternate;
 }
-/* 🔵 Center small circle with subtle glow */
+/* 🔵 Blue center circle */
 .placeholder-wheel::after {
   content: '';
   position: absolute;
-  width: 25%;
-  height: 25%;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
-  background: #3674B5;
-  box-shadow: 0 0 20px rgba(26, 35, 126, 0.7);
+  background: #0b1ec5;
+  box-shadow: none !important; /* Ensures no glow effect */
+  z-index: 3; /* Ensures it stays above other layers */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* 🔼 Arrow inside the blue circle */
+.placeholder-wheel::after::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 16px solid white; /* Arrow color */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+    40% { transform: rotate(180deg); }
+    50% { transform: rotate(180deg); }
+    60% { transform: rotate(180deg); }
+    100% { transform: rotate(1080deg); }
+}
+
+.placeholder-segments {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.segment {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform-origin: 0% 100%;
+  /* animation:glow 4s linear infinite; */
+  border-left: 2px solid black;
+}
+
 
 
 .dialog-button {

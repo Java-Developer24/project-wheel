@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
 body {
   background: linear-gradient(135deg, #1a237e, #4a148c, #880e4f);
   font-family: "Poppins", sans-serif;
@@ -46,13 +44,15 @@ body {
 }
 
 .logo-left-logo {
-  width: 150px;
+  width: 110px;
   height: 60px;
+  border-radius: 100%;
 }
 
 .logo-right-logo {
   width: 100px;
   height: 60px;
+  border-radius: 100%;
 }
 
 .lucky-spin-text {
@@ -126,6 +126,112 @@ body {
   z-index: 10;
   border: 4px solid #F93827;
 }
+
+.placeholder-wheel-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  border: 15px solid #F8DE22;
+}
+.placeholder-wheel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #FFF4B2 0deg 60deg,   /* Light Gold */
+    #FFF4B2  60deg 120deg, /* Gold */
+    #FFF4B2 120deg 180deg, 
+    #FFF4B2 180deg 240deg, 
+    #FFF4B2 240deg 300deg, 
+    #FFF4B2 300deg 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 3s linear infinite ;
+  border: 23px solid #0A5EB0;
+}
+
+
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+    40% { transform: rotate(180deg); }
+    50% { transform: rotate(180deg); }
+    60% { transform: rotate(180deg); }
+    100% { transform: rotate(1080deg); }
+}
+
+.placeholder-segments {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.segment {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform-origin: 0% 100%;
+  /* animation:glow 4s linear infinite; */
+  border-left: 2px solid black;
+}/* 🔥 Glow Effect: Placed above the wheel to highlight only gold areas */
+.placeholder-wheel::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  background: conic-gradient(
+    transparent 0deg 60deg,  
+    rgba(255, 215, 0, 0.4) 60deg 120deg, /* Glow on Gold */
+    transparent 120deg 180deg, 
+    rgba(255, 215, 0, 0.4) 180deg 240deg, 
+    transparent 240deg 300deg, 
+    rgba(255, 215, 0, 0.4) 300deg 360deg
+  );
+  filter: blur(25px);
+  pointer-events: none; /* Prevents it from interfering with interactions */
+  z-index: 2; /* Places glow above the wheel */
+  /* animation: glow 2s ease-in-out infinite alternate; */
+}
+
+/* 🔥 Keyframes for glowing effect */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); /* Softer glow */
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0. 5); /* Less intense */
+  }
+}
+
+/* ✨ Apply Glow Only When Spinning */
+.placeholder-wheel.spinning {
+  animation: spin 3s linear infinite, glow 2s ease-in-out infinite alternate;
+}
+/* 🔵 Center small circle with subtle glow */
+.placeholder-wheel::after {
+  content: '';
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  background: #3674B5;
+  box-shadow: 0 0 20px rgba(26, 35, 126, 0.7);
+}
+
 
 .dialog-button {
   background: linear-gradient(45deg, #ff416c, #ff4b2b);
@@ -256,7 +362,6 @@ body {
   width: 10px;
   height: 10px;
   opacity: 0;
-  /* Start from center */
   top: 50%;
   left: 50%;
   transform-origin: center;
@@ -299,66 +404,4 @@ body {
     transform: translate(calc(var(--tx) * 2.5), calc(var(--ty) * 2.5)) scale(0) rotate(360deg);
     opacity: 0;
   }
-}
-
-
-
-
-.placeholder-wheel {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #FFD700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-@keyframes spin-with-fast-boost {
-  0% { transform: rotate(0deg); }
-  40% { transform: rotate(180deg); }
-  50% { transform: rotate(180deg); }
-  60% { transform: rotate(180deg); }
-  100% { transform: rotate(1080deg); }
-}
-
-.placeholder-segments {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  animation: spin-with-fast-boost 4s linear infinite;
-}
-
-.segment {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 50%;
-  transform-origin: 0% 100%;
-  border-left: 2px solid #1a237e;
-}
-
-.placeholder-wheel::after {
-  content: '';
-  position: absolute;
-  width: 85%;
-  height: 85%;
-  border-radius: 50%;
-  background: #FFD700;
-  border: 2px solid #1a237e;
-}
-
-.wheel-center-text {
-  position: absolute;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  background: #F93827;
-  padding: 10px 15px;
-  border-radius: 50%;
-  z-index: 2;
 }

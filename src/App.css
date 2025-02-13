@@ -156,7 +156,7 @@ body {
     #FFF4B2  60deg 120deg, /* Gold */
     white 120deg 180deg, 
     #FFF4B2 180deg 240deg, 
-    white 240deg 300deg, 
+    white 240deg 300deg,
     #FFF4B2 300deg 360deg
   );
   display: flex;

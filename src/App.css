@@ -152,11 +152,11 @@ body {
   height: 105%;
   border-radius: 50%;
   background: conic-gradient(
-    #FFF4B2 0deg 60deg,   /* Light Gold */
+    white 0deg 60deg,   /* Light Gold */
     #FFF4B2  60deg 120deg, /* Gold */
-    #FFF4B2 120deg 180deg, 
+    white 120deg 180deg, 
     #FFF4B2 180deg 240deg, 
-    #FFF4B2 240deg 300deg, 
+    white 240deg 300deg, 
     #FFF4B2 300deg 360deg
   );
   display: flex;

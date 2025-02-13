@@ -28,7 +28,7 @@ body {
   border: 1px solid white;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 600px;
+  max-width: 580px;
   position: relative;
 }
 
@@ -48,13 +48,16 @@ body {
 .logo-left-logo {
   width: 110px;
   height: 60px;
-  border-radius: 100%;
+ 
 }
 
 .logo-right-logo {
   width: 100px;
   height: 60px;
-  border-radius: 100%;
+ 
+}
+.img-sizing{
+  border-radius: 10%;
 }
 
 .lucky-spin-text {
@@ -76,8 +79,8 @@ body {
 
 .wheel-outer {
   position: relative;
-  width: 98%;
-  height: 98%;
+  width: 99%;
+  height: 99%;
   border-radius: 50%;
   background: white ;
   display: flex;
@@ -88,28 +91,28 @@ body {
 
 .wheel-ring-outer {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 96%;
+  height: 96%;
   border-radius: 50%;
-  border: 26px solid white;
+  border: 30px solid rgba(0, 0, 0, 0.925);
   animation: spin 10s linear infinite;
 }
 
 .wheel-ring-middle {
   position: absolute;
-  width: 95%;
-  height: 95%;
+  width: 90%;
+  height: 90%;
   border-radius: 50%;
-  border: 30px solid #D91656;
+  border: 30px solid #20d087;
   animation: spin 8s linear infinite reverse;
 }
 
 .wheel-ring-inner {
   position: absolute;
-  width: 95%;
-  height: 95%;
+  width: 85%;
+  height: 85%;
   border-radius: 50%;
-  border: 15px solid black;
+  border: 25px solid #ffdf0e;
   animation: spin 8s linear infinite reverse;
 }
 
@@ -141,7 +144,7 @@ body {
   align-items: center;
   justify-content: center;
  
-  border: 28px solid #FFD700 ;
+  border: 28px solid #ffee34 ;
 }
 .placeholder-wheel {
   position: absolute;
@@ -209,7 +212,7 @@ body {
   width: 20%;
   height: 20%;
   border-radius: 50%;
-  background: #0b1ec5;
+  background:rgba(24,114,236,255);
   box-shadow: none !important; /* Ensures no glow effect */
   z-index: 3; /* Ensures it stays above other layers */
   display: flex;
